@@ -1,3 +1,9 @@
+// IMPORTANT: In production (e.g. Vercel) paths like "/src/assets/.." do NOT work.
+// Import assets so Vite fingerprints & serves them correctly.
+import saffronImg from "../assets/product-saffron.svg";
+import dryFruitsImg from "../assets/product-dryfruits.svg";
+import carpetsImg from "../assets/product-carpets.svg";
+
 export const products = [
   {
     id: "saffron",
@@ -8,7 +14,7 @@ export const products = [
     packaging: ["1g tin", "10g box", "100g bulk"],
     capacity: "50 tons/year",
     destinations: ["Iran", "UAE", "Germany"],
-    image: "/src/assets/product-saffron.svg",
+    image: saffronImg,
   },
   {
     id: "dry-fruits",
@@ -19,7 +25,7 @@ export const products = [
     packaging: ["500g", "1kg", "bulk bags"],
     capacity: "2000 tons/year",
     destinations: ["India", "Pakistan", "Russia"],
-    image: "/src/assets/product-dryfruits.svg",
+    image: dryFruitsImg,
   },
   {
     id: "carpets",
@@ -30,7 +36,7 @@ export const products = [
     packaging: ["rolled"],
     capacity: "10,000 units/year",
     destinations: ["USA", "Turkey", "UK"],
-    image: "/src/assets/product-carpets.svg",
+    image: carpetsImg,
   },
 ];
 
