@@ -1,0 +1,143 @@
+:root {
+  --accent: #8b0000;
+  --muted: #666;
+  --bg: #fbfbfb;
+  --card: #fff;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial;
+  margin: 0;
+  background: var(--bg);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.site-header {
+  background: linear-gradient(90deg, #fff 60%, rgba(139, 0, 0, 0.02));
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-header h1 {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.logo {
+  height: 44px;
+}
+
+.site-header nav {
+  margin-left: auto;
+}
+
+.site-header a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.site-footer {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid #eee;
+  color: var(--muted);
+}
+
+main.container {
+  padding-top: 1.5rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 6px 18px rgba(20, 20, 20, 0.04);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.search {
+  margin-bottom: 1rem;
+}
+
+.small {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.hero {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hero .content {
+  flex: 1;
+}
+
+.hero .art {
+  width: 420px;
+  height: 160px;
+}
+
+.btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn.secondary {
+  background: #fff;
+  color: var(--accent);
+  border: 1px solid #eee;
+}
+
+.card .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-card h4 {
+  margin: 0 0 0.4rem 0;
+}
+
+.request-quote {
+  background: #0057b8;
+  color: #fff;
+  border-radius: 6px;
+  padding: 0.5rem 0.7rem;
+  border: none;
+  cursor: pointer;
+}

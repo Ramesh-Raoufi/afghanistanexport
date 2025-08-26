@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff5f5"/>
+      <stop offset="1" stop-color="#ffe3e3"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="200" rx="18" fill="url(#g1)"/>
+  <g stroke="#8b0000" stroke-width="4" stroke-linecap="round" fill="none" transform="translate(70,40)">
+    <path d="M40 120 C70 60 60 40 80 10" />
+    <path d="M70 120 C90 70 110 40 120 0" />
+    <path d="M95 120 C110 80 140 50 155 15" />
+  </g>
+  <text x="50%" y="92%" font-size="22" font-family="Inter,Arial" text-anchor="middle" fill="#8b0000">Saffron</text>
+</svg>

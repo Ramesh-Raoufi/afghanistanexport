@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 310 72" fill="none" role="img" aria-labelledby="title desc">
+  <title id="title">Afghanistan Export Logo</title>
+  <desc id="desc">Stylized saffron flower emblem with the words Afghanistan Export</desc>
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e94848"/>
+      <stop offset="100%" stop-color="#8b0000"/>
+    </linearGradient>
+    <linearGradient id="petal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffe7d1"/>
+      <stop offset="100%" stop-color="#ffc2a8"/>
+    </linearGradient>
+  </defs>
+  <!-- Emblem -->
+  <g transform="translate(10 8)">
+    <circle cx="28" cy="28" r="28" fill="url(#grad)"/>
+    <g stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M28 12c3.5 6.8 5.5 11.3 6 13.6.7 3.1.7 5.9 0 9-.5 2.2-2.5 6.8-6 13.4"/>
+      <path d="M16.2 18c5.9 3.2 9.6 5.2 11.4 6.5 2.5 1.9 4.2 3.9 5.7 6.4 1.1 1.9 2.6 5.9 4.6 11.9"/>
+      <path d="M39.8 18c-5.9 3.2-9.6 5.2-11.4 6.5-2.5 1.9-4.2 3.9-5.7 6.4-1.1 1.9-2.6 5.9-4.6 11.9"/>
+    </g>
+    <circle cx="28" cy="28" r="6.8" fill="#fff" fill-opacity="0.15"/>
+    <circle cx="28" cy="28" r="3.8" fill="#fff" fill-opacity="0.9"/>
+  </g>
+  <!-- Wordmark -->
+  <g font-family="Inter,system-ui,sans-serif" font-weight="700" letter-spacing="0.5px">
+    <text x="86" y="34" font-size="30" fill="#8b0000">Afghanistan</text>
+    <text x="86" y="60" font-size="26" fill="#e53030" font-weight="600">Export</text>
+  </g>
+</svg>

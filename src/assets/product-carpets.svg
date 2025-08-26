@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <rect width="300" height="200" rx="18" fill="#f5f3ff" />
+  <rect x="60" y="30" width="180" height="140" fill="#8b5cf6" rx="12" />
+  <rect x="80" y="50" width="140" height="100" fill="#c4b5fd" rx="8" />
+  <text x="50%" y="92%" font-size="20" font-family="Inter,Arial" text-anchor="middle" fill="#5b21b6">Carpets</text>
+</svg>

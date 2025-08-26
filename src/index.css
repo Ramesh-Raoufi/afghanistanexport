@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* small custom tweaks */
+.container-custom {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+/* Smooth color transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+html.dark body {
+  @apply bg-gray-950 text-gray-100;
+}

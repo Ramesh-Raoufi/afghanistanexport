@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <rect width="300" height="200" rx="18" fill="#fff9ef" />
+  <circle cx="90" cy="90" r="36" fill="#d97706" opacity="0.35" />
+  <circle cx="150" cy="110" r="50" fill="#f59e0b" opacity="0.45" />
+  <circle cx="200" cy="80" r="32" fill="#b45309" opacity="0.35" />
+  <text x="50%" y="92%" font-size="20" font-family="Inter,Arial" text-anchor="middle" fill="#b45309">Dry Fruits</text>
+</svg>
