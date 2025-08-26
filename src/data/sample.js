@@ -3,7 +3,7 @@
 import saffronImg from "../assets/product-saffron.svg";
 import dryFruitsImg from "../assets/product-dryfruits.svg";
 import carpetsImg from "../assets/product-carpets.svg";
-
+// small change
 export const products = [
   {
     id: "saffron",
