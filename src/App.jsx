@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, Link, NavLink } from "react-router-dom";
+import { Routes, Route, Link, NavLink, useLocation } from "react-router-dom";
 import { I18nProvider, useI18n, rtlLangs, supportedLangs } from "./i18n";
 import logoAfghanistanExport from "./assets/logo-afghanistan-export.svg";
 import Home from "./pages/Home";
@@ -16,12 +16,19 @@ import Calculator from "./pages/Calculator";
 
 function AppShell() {
   const { t, lang, setLang } = useI18n();
+  const location = useLocation();
   const [dark, setDark] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("theme") === "dark";
     }
     return false;
   });
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [location.pathname, lang]);
   useEffect(() => {
     const root = document.documentElement;
     if (dark) {
@@ -55,38 +62,84 @@ function AppShell() {
             isRTL ? "flex-row-reverse" : ""
           }`}
         >
-          <h1 className={"flex items-center py-2 pr-4"}>
-            <Link to="/" className="flex items-center gap-2 shrink-0">
-              <img
-                src={logoAfghanistanExport}
-                alt="Afghanistan Export"
-                className={`h-14 w-auto ${
-                  isRTL ? "ml-0 mr-2" : "-ml-2"
-                } drop-shadow-sm transition-all`}
-              />
-            </Link>
-          </h1>
-          <nav
-            className={`flex gap-1 text-sm font-medium ${
-              isRTL ? "mr-auto" : "ml-auto"
-            }`}
+          <div
+            className={`flex items-center ${
+              isRTL ? "flex-row-reverse" : ""
+            } w-full`}
           >
-            {navItems.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                className={({ isActive }) =>
-                  `${baseLink} ${
-                    isActive
-                      ? "text-white bg-primary-700 shadow-sm dark:bg-primary-600"
-                      : "text-primary-700 hover:bg-primary-50 hover:text-primary-800 dark:text-primary-200 dark:hover:bg-gray-800 dark:hover:text-white"
-                  } ${isRTL ? "rounded-md" : ""}`
-                }
+            <h1 className={`flex items-center py-2 ${isRTL ? "pl-4" : "pr-4"}`}>
+              <Link to="/" className="flex items-center gap-2 shrink-0">
+                <img
+                  src={logoAfghanistanExport}
+                  alt="Afghanistan Export"
+                  className={`h-14 w-auto ${
+                    isRTL ? "ml-0 mr-2" : "-ml-2"
+                  } drop-shadow-sm transition-all`}
+                />
+              </Link>
+            </h1>
+
+            {/* Mobile toggle button */}
+            <button
+              type="button"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
+              onClick={() => setMobileOpen((o) => !o)}
+              className={`md:hidden inline-flex items-center justify-center rounded-md border border-primary-200 dark:border-gray-700 p-2 text-primary-700 dark:text-primary-200 hover:bg-primary-50 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-400 ${
+                isRTL ? "ml-auto" : "ml-auto"
+              }`}
+            >
+              <span className="sr-only">Menu</span>
+              <div className="relative w-5 h-5">
+                <span
+                  className={`block absolute left-0 right-0 h-0.5 bg-current transition-transform duration-300 ${
+                    mobileOpen ? "top-2.5 rotate-45" : "top-1.5"
+                  }`}
+                />
+                <span
+                  className={`block absolute left-0 right-0 h-0.5 bg-current transition-opacity duration-300 top-2.5 ${
+                    mobileOpen ? "opacity-0" : "opacity-100"
+                  }`}
+                />
+                <span
+                  className={`block absolute left-0 right-0 h-0.5 bg-current transition-transform duration-300 ${
+                    mobileOpen ? "top-2.5 -rotate-45" : "top-3.5"
+                  }`}
+                />
+              </div>
+            </button>
+
+            <nav
+              className={`${
+                mobileOpen ? "block" : "hidden"
+              } md:block text-sm font-medium ${
+                isRTL ? "md:mr-auto" : "md:ml-auto"
+              } absolute md:static top-full inset-x-0 md:inset-auto bg-white/95 dark:bg-gray-900/95 md:bg-transparent md:dark:bg-transparent border-b md:border-0 border-primary-100/60 dark:border-gray-800 shadow-sm md:shadow-none`}
+            >
+              <ul
+                className={`flex flex-col md:flex-row gap-1 p-3 md:p-0 ${
+                  isRTL ? "text-right" : ""
+                }`}
               >
-                {item.label}
-              </NavLink>
-            ))}
-          </nav>
+                {navItems.map((item) => (
+                  <li key={item.to}>
+                    <NavLink
+                      to={item.to}
+                      className={({ isActive }) =>
+                        `${baseLink} w-full md:w-auto ${
+                          isActive
+                            ? "text-white bg-primary-700 shadow-sm dark:bg-primary-600"
+                            : "text-primary-700 hover:bg-primary-50 hover:text-primary-800 dark:text-primary-200 dark:hover:bg-gray-800 dark:hover:text-white"
+                        } ${isRTL ? "rounded-md" : ""}`
+                      }
+                    >
+                      {item.label}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
           {/* <div className={`flex items-center gap-2 ${isRTL ? "pr-2" : "pl-2"}`}>
             <button
               onClick={() => {
